@@ -2,10 +2,7 @@ package pe.cibertec.MiDemoApp.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pe.cibertec.MiDemoApp.modelo.Producto;
 import pe.cibertec.MiDemoApp.modelo.Usuario;
 import pe.cibertec.MiDemoApp.repository.ProductoRepository;
@@ -36,5 +33,12 @@ public class ProductoController {
         productoService.registrarLote(productoList);
         System.out.printf("Paso por aqui");
         return  ResponseEntity.ok("Productos registrados exitosamente");
+    }
+
+    //Listar Todos los productos
+
+    @GetMapping
+    public List<Producto> ListarProductosLote(){
+        return productoService.ListarTodos();
     }
 }

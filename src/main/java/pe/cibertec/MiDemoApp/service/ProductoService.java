@@ -31,6 +31,7 @@ public class ProductoService {
         }
     }
 
+
     public List<Producto> ListarTodos(){
         return em.createQuery("SELECT p FROM Producto p",Producto.class)
                 .setHint("org.hibernate.fetchSize", 5)
