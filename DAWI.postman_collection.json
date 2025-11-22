@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Juan\",\r\n    \"correo\": \"juan.correo@correo.pe\",\r\n    \"clave\": \"miclave112\"\r\n}",
+					"raw": "{\r\n    \"nombre\": \"Ana\",\r\n    \"correo\": \"ana.correo@correo.pe\",\r\n    \"clave\": \"miclave112\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -65,14 +65,34 @@
 		},
 		{
 			"name": "Buscar usuario por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Juan\",\r\n    \"correo\": \"juan.correo@correo.pe\",\r\n    \"clave\": \"miclave1123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/usuarios/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"usuarios",
+						"2"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "guardar",
+			"name": "Guardar producto",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -108,7 +128,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"nombre\": \"arroz\",\r\n        \"precio\": 2.50,\r\n        \"version\": 1\r\n    },\r\n    {\r\n        \"nombre\": \"azucar\",\r\n        \"precio\": 4.50,\r\n        \"version\": 1\r\n    }\r\n]",
+					"raw": "[\r\n    {\r\n        \"nombre\": \"leche\",\r\n        \"precio\": 4.50,\r\n        \"version\": 1\r\n    },\r\n    {\r\n        \"nombre\": \"aceite\",\r\n        \"precio\": 8.50,\r\n        \"version\": 1\r\n    },\r\n    {\r\n        \r\n        \"nombre\": \"pasta\",\r\n        \"precio\": 5.00,\r\n        \"version\": 1\r\n    },\r\n    {\r\n            \"nombre\": \"arroz\",\r\n        \"precio\": 8.50,\r\n        \"version\": 1\r\n    },\r\n    {\r\n        \r\n        \"nombre\": \"yogurt\",\r\n        \"precio\": 5.00,\r\n        \"version\": 1\r\n    }\r\n    ,\r\n    {\r\n        \r\n        \"nombre\": \"carne\",\r\n        \"precio\": 5.00,\r\n        \"version\": 1\r\n    },\r\n    {\r\n            \"nombre\": \"pollo\",\r\n        \"precio\": 8.50,\r\n        \"version\": 1\r\n    },\r\n    {\r\n        \r\n        \"nombre\": \"pescado\",\r\n        \"precio\": 5.00,\r\n        \"version\": 1\r\n    }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -126,6 +146,72 @@
 						"api",
 						"productos",
 						"lote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Productos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"nombre\": \"leche\",\r\n        \"precio\": 4.50,\r\n        \"version\": 1\r\n    },\r\n    {\r\n        \"nombre\": \"aceite\",\r\n        \"precio\": 8.50,\r\n        \"version\": 1\r\n    },\r\n    {\r\n        \r\n        \"nombre\": \"pasta\",\r\n        \"precio\": 5.00,\r\n        \"version\": 1\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener producto por Id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"nombre\": \"aceite de oliva\",\r\n    \"precio\": 8.5,\r\n    \"version\": 1\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/productos/edit/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"productos",
+						"edit",
+						"2"
 					]
 				}
 			},
