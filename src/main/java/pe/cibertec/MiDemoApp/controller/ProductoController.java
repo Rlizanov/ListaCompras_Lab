@@ -34,6 +34,7 @@ public class ProductoController {
     @PostMapping("/lote")
     public ResponseEntity<String> registrarLote (@RequestBody List<Producto> productoList){
         productoService.registrarLote(productoList);
+        System.out.printf("Paso por aqui");
         return  ResponseEntity.ok("Productos registrados exitosamente");
     }
 }

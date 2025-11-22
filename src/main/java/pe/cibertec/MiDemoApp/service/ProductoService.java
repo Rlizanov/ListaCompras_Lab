@@ -2,6 +2,7 @@ package pe.cibertec.MiDemoApp.service;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pe.cibertec.MiDemoApp.modelo.Producto;
@@ -17,6 +18,7 @@ public class ProductoService {
     @PersistenceContext
     private EntityManager em;
 
+    @Transactional
     public void registrarLote(List<Producto> productos){
         int i=0;
         for (Producto producto:productos){
