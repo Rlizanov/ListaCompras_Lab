@@ -12,6 +12,8 @@ import pe.cibertec.MiDemoApp.repository.ProductoRepository;
 import pe.cibertec.MiDemoApp.repository.UsuarioRepository;
 import pe.cibertec.MiDemoApp.service.ProductoService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/productos")
 @RequiredArgsConstructor
@@ -28,5 +30,10 @@ public class ProductoController {
         return ResponseEntity.ok(productoGuardado);
     }
 
-    //
+    //Registrar Lote
+    @PostMapping("/lote")
+    public ResponseEntity<String> registrarLote (@RequestBody List<Producto> productoList){
+        productoService.registrarLote(productoList);
+        return  ResponseEntity.ok("Productos registrados exitosamente");
+    }
 }

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import pe.cibertec.MiDemoApp.modelo.Producto;
 import pe.cibertec.MiDemoApp.repository.ProductoRepository;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductoService {
@@ -30,7 +32,7 @@ public class ProductoService {
     public List<Producto> ListarTodos(){
         return em.createQuery("SELECT p FROM Producto p",Producto.class)
                 .setHint("org.hibernate.fetchSize", 5)
-                .getResultList()
+                .getResultList();
     }
 
 }
