@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pe.cibertec</groupId>
-	<artifactId>MiDemoApp</artifactId>
+	<artifactId>MiDemoApp2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MiDemoApp</name>
 	<description>Demo project for Spring Boot</description>
