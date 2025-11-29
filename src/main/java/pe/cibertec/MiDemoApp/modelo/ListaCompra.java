@@ -5,10 +5,11 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
-@Table(name="listas_compra")
+@Table(name="lista_compra")
 public class ListaCompra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +23,7 @@ public class ListaCompra {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-    //@OneToMany
+    @OneToMany(mappedBy = "Lista", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ItemLista> items;
 
 }
