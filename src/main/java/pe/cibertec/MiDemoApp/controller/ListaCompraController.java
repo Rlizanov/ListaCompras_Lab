@@ -1,7 +1,6 @@
 package pe.cibertec.MiDemoApp.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.cibertec.MiDemoApp.modelo.ItemLista;
@@ -16,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/listas")
 @RequiredArgsConstructor
-public class ListCompraController {
+public class ListaCompraController {
 
     private final ListaCompraRepository listaCompraRepo;
     private final ItemListaRepository itemListaRepo;
@@ -58,4 +57,13 @@ public class ListCompraController {
         return listaCompraRepo.findByUsuarioId(idUsuario);
     }
 
+    // OTROS METODOS
+    @GetMapping("/{id}")
+    public ResponseEntity<List<ItemLista>> detalle (@PathVariable Long idLista){
+        List<ItemLista> items = itemListaRepo.detalleLista(idLista);
+        if(items.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(items);
+    }
 }
